@@ -1,0 +1,140 @@
+{
+  "gerado_em": "2026-10-21T09:45:40-03:00",
+  "ano": 2025,
+  "cobertura_pct": 99.5633,
+  "P1": {
+    "pct_total": 20.6747,
+    "pct_eolica": 19.0958,
+    "pct_solar": 25.7485,
+    "pct_max": 25.7485,
+    "fonte_max": "solar",
+    "cortada_mwh": 37217277.475,
+    "pct_jan_ago": 18.0994
+  },
+  "P2": {
+    "pct_usinas_80": 45.5319,
+    "n80": 107,
+    "n_usinas": 235,
+    "uf_top": "RN",
+    "share_uf_top": 31.4376,
+    "share_top3": 74.1401,
+    "share_ne": 84.3101,
+    "share_top10": 17.5886
+  },
+  "P3": {
+    "pct_ene": 53.9439,
+    "pct_eletrico": 46.0561,
+    "pct_sis": 84.3713,
+    "motivo_lider": "ENE",
+    "ene_s1": 45.7085,
+    "ene_s2": 57.9603,
+    "pct_ni": 0.0
+  },
+  "P4": {
+    "pct_meio_dia": 61.7088,
+    "razao_domingo": 1.6353,
+    "razao_sabado": 1.2344,
+    "meio_dia_eolica": 55.584,
+    "meio_dia_solar": 76.3058,
+    "pico_eolica": "10:00",
+    "pico_solar": "10:00"
+  },
+  "P5": {
+    "pct_energia_bateria": 1.4097,
+    "pct_eventos_bateria": 10.6768,
+    "p_mw": 0.0,
+    "mediana_eolica": 10.0,
+    "mediana_solar": 8.5
+  },
+  "hipoteses": [
+    {
+      "hipotese": "H1 — o corte é relevante",
+      "criterio": "energia cortada ≥ 10% do potencial em pelo menos uma fonte",
+      "resultado": "eólica 19,1% · solar 25,7%",
+      "veredito": "Confirmada"
+    },
+    {
+      "hipotese": "H2 — o corte é concentrado em poucas usinas",
+      "criterio": "≤ 20% das usinas respondem por 80% da energia cortada",
+      "resultado": "107 de 235 usinas (45,5%)",
+      "veredito": "Não confirmada"
+    },
+    {
+      "hipotese": "H3 — predomina o motivo energético",
+      "criterio": "motivo ENE ≥ 50% da energia cortada",
+      "resultado": "ENE 53,9% · elétricos (REL + CNF) 46,1%",
+      "veredito": "Confirmada"
+    },
+    {
+      "hipotese": "H4 — o corte se concentra no meio do dia",
+      "criterio": "≥ 70% da energia cortada entre 09h00 e 15h59",
+      "resultado": "61,7% da energia cortada",
+      "veredito": "Não confirmada"
+    },
+    {
+      "hipotese": "H5 — baterias de 4 h absorveriam a maior parte",
+      "criterio": "≥ 50% da energia cortada em eventos de até 4 h",
+      "resultado": "1,4% da energia (10,7% dos eventos)",
+      "veredito": "Não confirmada"
+    }
+  ],
+  "integridade_ok": "17/17",
+  "reconciliacao_ok": "7/7",
+  "tabelas_bigquery": [
+    {
+      "tabela": "dim_usina",
+      "linhas_bigquery": 235,
+      "tamanho_mb": 0.038
+    },
+    {
+      "tabela": "dim_data",
+      "linhas_bigquery": 365,
+      "tamanho_mb": 0.035
+    },
+    {
+      "tabela": "dim_horario",
+      "linhas_bigquery": 48,
+      "tamanho_mb": 0.002
+    },
+    {
+      "tabela": "dim_restricao",
+      "linhas_bigquery": 16,
+      "tamanho_mb": 0.002
+    },
+    {
+      "tabela": "fato_evento_corte",
+      "linhas_bigquery": 67782,
+      "tamanho_mb": 6.932
+    },
+    {
+      "tabela": "fato_restricao",
+      "linhas_bigquery": 3874032,
+      "tamanho_mb": 549.55
+    },
+    {
+      "tabela": "meta_catalogo_dados",
+      "linhas_bigquery": 87,
+      "tamanho_mb": 0.017
+    },
+    {
+      "tabela": "meta_log_transformacoes",
+      "linhas_bigquery": 46,
+      "tamanho_mb": 0.005
+    },
+    {
+      "tabela": "meta_coleta",
+      "linhas_bigquery": 24,
+      "tamanho_mb": 0.025
+    },
+    {
+      "tabela": "meta_perfil_qualidade",
+      "linhas_bigquery": 48,
+      "tamanho_mb": 0.005
+    },
+    {
+      "tabela": "meta_verificacoes_qualidade",
+      "linhas_bigquery": 36,
+      "tamanho_mb": 0.005
+    }
+  ]
+}

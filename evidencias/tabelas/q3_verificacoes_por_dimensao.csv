@@ -1,0 +1,37 @@
+dimensao,verificacao,ocorrencias,base,pct,tratamento
+Unicidade,"registro duplicado (fonte, id_ons, din_instante)",0,3874032,0.0,R04 — manter a versão do arquivo mais recente
+Completude,campo obrigatório nulo: id_ons,0,3874032,0.0,Registro mantido; campo nulo vira 'não informado' ou fica fora das somas
+Completude,campo obrigatório nulo: din_instante,0,3874032,0.0,Registro mantido; campo nulo vira 'não informado' ou fica fora das somas
+Completude,campo obrigatório nulo: val_geracao,0,3874032,0.0,Registro mantido; campo nulo vira 'não informado' ou fica fora das somas
+Completude,campo obrigatório nulo: id_estado,0,3874032,0.0,Registro mantido; campo nulo vira 'não informado' ou fica fora das somas
+Completude,campo obrigatório nulo: id_subsistema,0,3874032,0.0,Registro mantido; campo nulo vira 'não informado' ou fica fora das somas
+Completude,campo obrigatório nulo: nom_agenteoperador,0,3874032,0.0,Registro mantido; campo nulo vira 'não informado' ou fica fora das somas
+Completude,nome da usina nulo (campo opcional no dicionário),0,3874032,0.0,R10 — usar o id_ons como nome
+Completude,intervalo restrito sem motivo (cod_razaorestricao nulo),36,1432229,0.003,R09 — energia atribuída ao motivo 'NI' (não informado)
+Completude,intervalo restrito sem energia não gerada apurada (GNRa nula),0,1432229,0.0,"R07 — recalcular max(0, referência − geração) quando houver referência"
+Completude,intervalo restrito sem geração de referência,0,1432229,0.0,"R07 — sem referência e sem GNRa, a energia cortada fica 0 (subestimação conservadora)"
+Completude,descrição da restrição ausente em intervalo restrito,821409,1432229,57.352,Esperado: o dicionário informa que a descrição só existe a partir de set/2025
+Consistência,"GNRa diferente de max(0, referência − geração) (tolerância 0,05 MW)",36501,1432229,2.549,Mantida a GNRa publicada pelo ONS (valor oficial)
+Consistência,minutos por motivo (REL+CNF+ENE) maiores que os minutos restritos,0,3874032,0.0,R09 — rateio usa a proporção entre motivos
+Consistência,motivo informado com zero minutos restritos,0,1432193,0.0,R06 — o intervalo conta como restrito
+Consistência,geração acima da disponibilidade (tolerância 1 MW),94169,3874032,2.431,R08 — mantida e sinalizada (flag_geracao_acima_disponibilidade)
+Consistência,GNRa positiva fora de intervalo restrito,0,2441803,0.0,R06 — o intervalo passa a contar como restrito
+Consistência,"usina com estado, subsistema, agente ou ponto de conexão alterado no ano",17,235,7.234,R10 — dimensão guarda o atributo mais recente + flag
+Consistência,hora do pico médio da geração solar fora de 10h–14h (observado: 14h; indicaria fuso errado),0,1,0.0,"Verificado; se ocorrer, revisar a conversão de fuso (R01)"
+Conformidade,"cod_razaorestricao fora do domínio ['CNF', 'ENE', 'PAR', 'REL']",0,1432193,0.0,R02 (caixa e espaços) e R09 (código inválido → 'NI')
+Conformidade,"cod_origemrestricao fora do domínio ['LOC', 'SIS']",0,1432193,0.0,R02 (caixa e espaços); valor inválido → 'NI'
+Conformidade,"id_subsistema fora do domínio ['N', 'NE', 'S', 'SE']",0,3874032,0.0,Mantido e sinalizado
+Conformidade,id_estado fora do domínio (27 UFs),0,3874032,0.0,Mantido e sinalizado
+Conformidade,instante fora do passo de 30 minutos,0,3874032,0.0,R03 — arredondar para o início da meia hora
+Conformidade,num_minutos_rel fora de 0 a 30,0,1432229,0.0,R05 — valor fora da faixa vira nulo
+Conformidade,num_minutos_cnf fora de 0 a 30,23,1432229,0.002,R05 — valor fora da faixa vira nulo
+Conformidade,num_minutos_ene fora de 0 a 30,2,1432229,0.0,R05 — valor fora da faixa vira nulo
+Conformidade,num_minutos_restricao fora de 0 a 30,26,1432229,0.002,R05 — valor fora da faixa vira nulo
+Conformidade,registro fora do ano 2025,0,3874032,0.0,R13 — fora do recorte
+Conformidade,colunas ausentes ou com tipo diferente entre arquivos (deriva de esquema),0,24,0.0,R01 — tipagem explícita unifica os tipos
+Acurácia,valor negativo em val_geracao,0,3874032,0.0,"R05 — vira nulo (na geração, o negativo é consumo interno da usina, não geração)"
+Acurácia,valor negativo em val_geracaolimitada,0,1432229,0.0,R05 — valor negativo vira nulo
+Acurácia,valor negativo em val_disponibilidade,0,3874032,0.0,R05 — valor negativo vira nulo
+Acurácia,valor negativo em val_geracaoreferencia,0,3874032,0.0,R05 — valor negativo vira nulo
+Acurácia,valor negativo em val_geracaonaorealizadaapurada,0,1432229,0.0,R05 — valor negativo vira nulo
+Acurácia,GNRa maior que a geração de referência,30906,1432229,2.158,Mantida e sinalizada na contagem (valor oficial do ONS)

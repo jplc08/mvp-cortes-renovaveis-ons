@@ -1,0 +1,7 @@
+fonte,tipo_dia,dias,media_diaria_mwh
+eolica,domingo ou feriado,62,95856.594
+eolica,dia útil,252,65342.145
+eolica,sábado,51,74658.747
+solar,dia útil,252,24049.055
+solar,domingo ou feriado,62,50321.53
+solar,sábado,51,35687.362

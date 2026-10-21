@@ -1,0 +1,13 @@
+fonte,cod_razao,natureza,cod_origem,nome_origem,intervalos,cortada_mwh
+eolica,REL,elétrica,LOC,Local,8425,217448.889
+eolica,REL,elétrica,SIS,Sistêmica,86829,3180840.332
+solar,REL,elétrica,SIS,Sistêmica,21402,1235098.827
+eolica,CNF,elétrica,LOC,Local,261710,4711662.659
+eolica,CNF,elétrica,SIS,Sistêmica,190870,4833352.609
+eolica,ENE,energética,SIS,Sistêmica,573836,13273620.954
+solar,CNF,elétrica,LOC,Local,24461,670369.912
+solar,CNF,elétrica,SIS,Sistêmica,57172,2175181.215
+solar,ENE,energética,SIS,Sistêmica,202615,6702622.07
+solar,REL,elétrica,LOC,Local,4873,216093.966
+solar,ENE,energética,NI,Não informada,16,86.95
+solar,CNF,elétrica,NI,Não informada,20,899.091

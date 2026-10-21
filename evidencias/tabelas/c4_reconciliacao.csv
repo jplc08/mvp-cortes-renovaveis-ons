@@ -1,0 +1,8 @@
+metrica,gold_no_drive,bigquery,status
+linhas_fato_restricao,3874032.0,3874032.0,OK
+usinas_com_registro,235.0,235.0,OK
+intervalos_restritos,1432229.0,1432229.0,OK
+energia_gerada_mwh,142796641.236,142796641.235,OK
+energia_cortada_mwh,37217277.475,37217277.474,OK
+eventos,67782.0,67782.0,OK
+energia_cortada_eventos_mwh,37217277.475,37217277.475,OK

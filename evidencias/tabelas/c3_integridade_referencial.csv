@@ -1,0 +1,18 @@
+verificacao,ocorrencias,status
+FK sem correspondência: fato_evento_corte.sk_restricao_predominante,0,OK
+Energia cortada em intervalo não restrito,0,OK
+Chave duplicada em dim_horario,0,OK
+FK sem correspondência: fato_evento_corte.sk_usina,0,OK
+FK sem correspondência: fato_restricao.sk_data,0,OK
+"Rateio por motivo diferente do total cortado (> 0,001 MWh)",0,OK
+FK sem correspondência: fato_restricao.sk_horario,0,OK
+Chave duplicada em dim_restricao,0,OK
+Chave duplicada em dim_data,0,OK
+FK sem correspondência: fato_restricao.sk_restricao,0,OK
+Chave duplicada em dim_usina,0,OK
+FK sem correspondência: fato_restricao.sk_usina,0,OK
+FK sem correspondência: fato_evento_corte.sk_horario_inicio,0,OK
+"Chave natural duplicada em dim_usina (fonte, id_ons)",0,OK
+FK sem correspondência: fato_evento_corte.sk_data_inicio,0,OK
+Chave duplicada na fato_evento_corte,0,OK
+"Chave duplicada na fato_restricao (sk_usina, din_instante)",0,OK

@@ -1,0 +1,12 @@
+# Dados brutos e intermediários não são versionados (o script de coleta busca a versão oficial do ONS)
+dados/
+bronze/
+silver/
+gold/
+*.parquet
+*.zip
+# Ambiente
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+.env

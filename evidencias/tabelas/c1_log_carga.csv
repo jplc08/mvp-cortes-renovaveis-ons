@@ -1,0 +1,12 @@
+tabela,linhas_drive,linhas_bigquery,tamanho_mb,segundos,status
+dim_usina,235,235,0.038,4.4,OK
+dim_data,365,365,0.035,3.3,OK
+dim_horario,48,48,0.002,3.3,OK
+dim_restricao,16,16,0.002,4.2,OK
+fato_evento_corte,67782,67782,6.932,3.4,OK
+fato_restricao,3874032,3874032,549.55,19.7,OK
+meta_catalogo_dados,87,87,0.017,3.0,OK
+meta_log_transformacoes,46,46,0.005,3.3,OK
+meta_coleta,24,24,0.025,3.4,OK
+meta_perfil_qualidade,48,48,0.005,3.8,OK
+meta_verificacoes_qualidade,36,36,0.005,2.5,OK

@@ -1,0 +1,12 @@
+tabela,linhas,tamanho_mb,colunas,criada_em,expira_em,descricao
+dim_data,365,0.04,15,21/10/2026 09:48,20/12/2026,"Dimensão calendário, com dia útil, sábado, domingo e feriados nacionais."
+dim_horario,48,0.0,7,21/10/2026 09:48,20/12/2026,"Dimensão das 48 meias horas do dia, com período e janela do meio-dia."
+dim_restricao,16,0.0,8,21/10/2026 09:48,20/12/2026,"Dimensão dos motivos (REL, CNF, ENE, PAR) e origens (LOC, SIS) de restrição."
+dim_usina,235,0.04,18,21/10/2026 09:48,20/12/2026,"Dimensão de usinas eólicas e solares (UF, subsistema, ponto de conexão, agente)."
+fato_evento_corte,67782,6.93,14,21/10/2026 09:48,20/12/2026,Fato de eventos de corte. Grão: sequência contínua de meias horas restritas de uma usina.
+fato_restricao,3874032,549.55,25,21/10/2026 09:49,20/12/2026,"Fato de restrições. Grão: usina × meia hora. Energia gerada, cortada e potencial (MWh), rateada por motivo."
+meta_catalogo_dados,87,0.02,9,21/10/2026 09:49,20/12/2026,"Catálogo de Dados do modelo (descrição, domínio, obrigatoriedade e linhagem)."
+meta_coleta,24,0.02,15,21/10/2026 09:49,20/12/2026,"Metadados da coleta: arquivos, linhas, tamanho, ETag, Last-Modified, SHA-256 e data."
+meta_log_transformacoes,46,0.01,7,21/10/2026 09:49,20/12/2026,Log de linhagem: regras de transformação aplicadas e linhas afetadas.
+meta_perfil_qualidade,48,0.0,11,21/10/2026 09:49,20/12/2026,"Perfil de qualidade de cada atributo da camada bronze, por fonte."
+meta_verificacoes_qualidade,36,0.0,6,21/10/2026 09:49,20/12/2026,"Verificações de qualidade por dimensão (unicidade, completude etc.) na camada bronze."

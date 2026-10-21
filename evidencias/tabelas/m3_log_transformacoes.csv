@@ -1,0 +1,47 @@
+regra,camada,tabela,descricao,linhas_afetadas,linhas_total,executado_em
+R01,silver,restricoes,Tipagem explícita das 24 colunas (contagem = valores não conversíveis → nulo),0,3874032,2026-10-21 09:45:40
+R02,silver,restricoes,Código em maiúsculas e sem espaços: cod_razaorestricao,0,3874032,2026-10-21 09:45:40
+R02,silver,restricoes,Código em maiúsculas e sem espaços: cod_origemrestricao,0,3874032,2026-10-21 09:45:40
+R02,silver,restricoes,Código em maiúsculas e sem espaços: id_subsistema,0,3874032,2026-10-21 09:45:40
+R02,silver,restricoes,Código em maiúsculas e sem espaços: id_estado,0,3874032,2026-10-21 09:45:40
+R02,silver,restricoes,Espaços extras removidos: id_ons,0,3874032,2026-10-21 09:45:40
+R02,silver,restricoes,Espaços extras removidos: ceg,0,3874032,2026-10-21 09:45:40
+R02,silver,restricoes,Espaços extras removidos: id_pontoconexao,0,3874032,2026-10-21 09:45:40
+R02,silver,restricoes,Espaços extras removidos: nom_usina,0,3874032,2026-10-21 09:45:40
+R02,silver,restricoes,Espaços extras removidos: nom_estado,0,3874032,2026-10-21 09:45:40
+R02,silver,restricoes,Espaços extras removidos: nom_subsistema,0,3874032,2026-10-21 09:45:40
+R02,silver,restricoes,Espaços extras removidos: nom_pontoconexao,0,3874032,2026-10-21 09:45:40
+R02,silver,restricoes,Espaços extras removidos: nom_agenteoperador,0,3874032,2026-10-21 09:45:40
+R03,silver,restricoes,Instante alinhado ao início da meia hora,0,3874032,2026-10-21 09:45:40
+R13,silver,restricoes,"Descarte de registros fora de 2025, sem instante ou sem usina",0,3874032,2026-10-21 09:45:40
+R04,silver,restricoes,Duplicatas entre arquivos: mantida a versão do arquivo modificado mais recentemente,0,3874032,2026-10-21 09:45:40
+R04,silver,restricoes,Duplicatas no mesmo arquivo: mantido o registro com mais minutos restritos e maior GNRa,0,3874032,2026-10-21 09:45:40
+R05,silver,restricoes,Potência negativa → nulo: val_geracao,0,3874032,2026-10-21 09:45:40
+R05,silver,restricoes,Potência negativa → nulo: val_geracaolimitada,0,3874032,2026-10-21 09:45:40
+R05,silver,restricoes,Potência negativa → nulo: val_disponibilidade,0,3874032,2026-10-21 09:45:40
+R05,silver,restricoes,Potência negativa → nulo: val_geracaoreferencia,0,3874032,2026-10-21 09:45:40
+R05,silver,restricoes,Potência negativa → nulo: val_geracaoreferenciafinal,0,3874032,2026-10-21 09:45:40
+R05,silver,restricoes,Potência negativa → nulo: val_geracaonaorealizadaapurada,0,3874032,2026-10-21 09:45:40
+R05,silver,restricoes,Minutos fora de 0 a 30 → nulo: num_minutos_rel,0,3874032,2026-10-21 09:45:40
+R05,silver,restricoes,Minutos fora de 0 a 30 → nulo: num_minutos_cnf,23,3874032,2026-10-21 09:45:40
+R05,silver,restricoes,Minutos fora de 0 a 30 → nulo: num_minutos_ene,2,3874032,2026-10-21 09:45:40
+R05,silver,restricoes,Minutos fora de 0 a 30 → nulo: num_minutos_restricao,26,3874032,2026-10-21 09:45:40
+R06,silver,restricoes,Intervalos classificados como restritos,1432229,3874032,2026-10-21 09:45:40
+R06,silver,restricoes,…dos quais restritos apenas pela energia não gerada (sem minutos nem motivo),0,3874032,2026-10-21 09:45:40
+R07,silver,restricoes,"GNRa ausente em intervalo restrito → recalculada como max(0, referência − geração)",0,1432229,2026-10-21 09:45:40
+R07,silver,restricoes,Intervalo restrito sem GNRa e sem referência → energia cortada = 0 (conservador),0,1432229,2026-10-21 09:45:40
+R08,silver,restricoes,"Conversão MWmed → MWh (× 0,5 h) da geração e da energia cortada",3874032,3874032,2026-10-21 09:45:40
+R08,silver,restricoes,Geração acima da disponibilidade (> 1 MW) sinalizada,94169,3874032,2026-10-21 09:45:40
+R09,silver,restricoes,Energia cortada rateada pelos minutos REL/CNF/ENE,1432204,1432229,2026-10-21 09:45:40
+R09,silver,restricoes,"…com minutos restritos além de REL+CNF+ENE (parcela a PAR, se informado, ou a 'NI')",0,1432229,2026-10-21 09:45:40
+R09,silver,restricoes,Sem minutos por motivo: energia atribuída ao motivo informado,25,1432229,2026-10-21 09:45:40
+R09,silver,restricoes,Sem minutos e sem motivo válido: energia atribuída a 'NI',0,1432229,2026-10-21 09:45:40
+R10,silver,usinas,Cadastro com o atributo mais recente de cada usina,235,235,2026-10-21 09:45:40
+R10,silver,usinas,Nome da usina nulo → id_ons,0,235,2026-10-21 09:45:40
+R10,silver,usinas,"Usinas com estado, subsistema, agente ou ponto de conexão alterado no ano",17,235,2026-10-21 09:45:40
+R11,gold,dim_usina,"Chave substituta sequencial por (fonte, id_ons)",235,235,2026-10-21 09:45:40
+R14,gold,dim_data,Feriados nacionais e pontos facultativos marcados (fixos + móveis pela Páscoa),13,365,2026-10-21 09:45:40
+R14,gold,dim_horario,Janela do meio-dia (09h00–15h59),14,48,2026-10-21 09:45:40
+R11,gold,fato_restricao,Grão usina × meia hora com chaves substitutas,3874032,3874032,2026-10-21 09:45:40
+R12,gold,fato_evento_corte,Meias horas restritas consecutivas agrupadas em eventos,1364447,1432229,2026-10-21 09:45:40
+R12,gold,fato_evento_corte,Eventos sem energia cortada (motivo/origem do primeiro intervalo),3343,67782,2026-10-21 09:45:40

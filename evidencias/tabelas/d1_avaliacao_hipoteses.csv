@@ -1,0 +1,6 @@
+hipotese,criterio,resultado,veredito
+H1 — o corte é relevante,energia cortada ≥ 10% do potencial em pelo menos uma fonte,"eólica 19,1% · solar 25,7%",Confirmada
+H2 — o corte é concentrado em poucas usinas,≤ 20% das usinas respondem por 80% da energia cortada,"107 de 235 usinas (45,5%)",Não confirmada
+H3 — predomina o motivo energético,motivo ENE ≥ 50% da energia cortada,"ENE 53,9% · elétricos (REL + CNF) 46,1%",Confirmada
+H4 — o corte se concentra no meio do dia,≥ 70% da energia cortada entre 09h00 e 15h59,"61,7% da energia cortada",Não confirmada
+H5 — baterias de 4 h absorveriam a maior parte,≥ 50% da energia cortada em eventos de até 4 h,"1,4% da energia (10,7% dos eventos)",Não confirmada

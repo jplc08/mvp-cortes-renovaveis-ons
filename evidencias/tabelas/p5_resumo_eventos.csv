@@ -1,0 +1,3 @@
+fonte,eventos,eventos_cabem_bateria,duracao_mediana_h,duracao_p90_h,duracao_maxima_h,cortada_mwh,cortada_cabe_bateria_mwh,corte_maximo_mediano_mw,pct_energia_cabe_bateria,pct_eventos_cabem_bateria
+solar,18594,1749,8.5,10.5,43.0,11000352.03,163179.803,66.143,1.483405281530795,9.406260083898031
+eolica,45845,5131,10.0,17.5,477.0,26216925.444,361486.9,49.86899999999999,1.3788302551805511,11.192060202857455

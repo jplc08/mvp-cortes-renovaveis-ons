@@ -1,0 +1,88 @@
+tabela,atributo,dominio,nulos,pct_nulos,minimo_observado,maximo_observado,fora_do_dominio,status
+dim_usina,sk_usina,1 a 9999,0,0.0,"1,00","235,00",0,OK
+dim_usina,id_ons,Texto livre,0,0.0,,,0,OK
+dim_usina,nom_usina,Texto livre,0,0.0,,,0,OK
+dim_usina,fonte,"eolica, solar",0,0.0,2 valores distintos,,0,OK
+dim_usina,nome_fonte,"Eólica, Solar fotovoltaica",0,0.0,2 valores distintos,,0,OK
+dim_usina,ceg,Texto livre,0,0.0,,,0,OK
+dim_usina,uf,"27 valores: AC, AL, AM, AP … TO",0,0.0,11 valores distintos,,0,OK
+dim_usina,nom_estado,Texto livre,0,0.0,,,0,OK
+dim_usina,id_subsistema,"N, NE, SE, S",0,0.0,4 valores distintos,,0,OK
+dim_usina,nom_subsistema,Texto livre,0,0.0,,,0,OK
+dim_usina,id_pontoconexao,Texto livre,0,0.0,,,0,OK
+dim_usina,nom_pontoconexao,Texto livre,0,0.0,,,0,OK
+dim_usina,nom_agenteoperador,Texto livre,0,0.0,,,0,OK
+dim_usina,potencia_disponivel_max_mw,0 a 2500,0,0.0,"0,00","7.778,69",1,ATENÇÃO
+dim_usina,primeiro_registro,2025-01-01 a 2025-12-31,0,0.0,2025-01-01 00:00:00,2025-12-09 00:00:00,0,OK
+dim_usina,ultimo_registro,2025-01-01 a 2025-12-31,0,0.0,2025-03-25 23:30:00,2025-12-31 23:30:00,0,OK
+dim_usina,flag_atributo_alterado,"verdadeiro, falso",0,0.0,2 valores distintos,,0,OK
+dim_usina,atributos_alterados,Texto livre,218,92.77,,,0,OK
+dim_data,sk_data,20250101 a 20251231,0,0.0,"20.250.101,00","20.251.231,00",0,OK
+dim_data,data,2025-01-01 a 2025-12-31,0,0.0,2025-01-01 00:00:00,2025-12-31 00:00:00,0,OK
+dim_data,ano,2025 a 2025,0,0.0,"2.025,00","2.025,00",0,OK
+dim_data,semestre,1 a 2,0,0.0,"1,00","2,00",0,OK
+dim_data,trimestre,1 a 4,0,0.0,"1,00","4,00",0,OK
+dim_data,mes,1 a 12,0,0.0,"1,00","12,00",0,OK
+dim_data,nome_mes,"janeiro, fevereiro, março, abril, maio, junho, julho, agosto, setembro, outubro, novembro, dezembro",0,0.0,12 valores distintos,,0,OK
+dim_data,dia,1 a 31,0,0.0,"1,00","31,00",0,OK
+dim_data,dia_semana,1 a 7,0,0.0,"1,00","7,00",0,OK
+dim_data,nome_dia_semana,"segunda-feira, terça-feira, quarta-feira, quinta-feira, sexta-feira, sábado, domingo",0,0.0,7 valores distintos,,0,OK
+dim_data,fim_de_semana,"verdadeiro, falso",0,0.0,2 valores distintos,,0,OK
+dim_data,feriado,"verdadeiro, falso",0,0.0,2 valores distintos,,0,OK
+dim_data,nome_feriado,Texto livre,352,96.44,,,0,OK
+dim_data,dia_util,"verdadeiro, falso",0,0.0,2 valores distintos,,0,OK
+dim_data,tipo_dia,"dia útil, sábado, domingo ou feriado",0,0.0,3 valores distintos,,0,OK
+dim_horario,sk_horario,"48 valores: 0, 30, 100, 130 … 2330",0,0.0,48 valores distintos,,0,OK
+dim_horario,hora_minuto,Padrão ^([01]\d|2[0-3]):(00|30)$,0,0.0,48 valores distintos,,0,OK
+dim_horario,hora,0 a 23,0,0.0,"0,00","23,00",0,OK
+dim_horario,minuto,"0, 30",0,0.0,2 valores distintos,,0,OK
+dim_horario,indice_meia_hora,0 a 47,0,0.0,"0,00","47,00",0,OK
+dim_horario,periodo_dia,"madrugada, manhã, tarde, noite",0,0.0,4 valores distintos,,0,OK
+dim_horario,janela_meio_dia,"verdadeiro, falso",0,0.0,2 valores distintos,,0,OK
+dim_restricao,sk_restricao,1 a 16,0,0.0,"1,00","16,00",0,OK
+dim_restricao,cod_razao,"REL, CNF, ENE, PAR, NI, SEM",0,0.0,6 valores distintos,,0,OK
+dim_restricao,nome_razao,"Indisponibilidade externa, Confiabilidade elétrica, Energética (excesso de oferta), Parecer de acesso, Não informado, Sem restrição",0,0.0,6 valores distintos,,0,OK
+dim_restricao,natureza,"acesso, elétrica, energética, não informado, sem restrição",0,0.0,5 valores distintos,,0,OK
+dim_restricao,alavanca,Texto livre,0,0.0,,,0,OK
+dim_restricao,cod_origem,"LOC, SIS, NI, SEM",0,0.0,4 valores distintos,,0,OK
+dim_restricao,nome_origem,"Local, Sistêmica, Não informada, Sem restrição",0,0.0,4 valores distintos,,0,OK
+dim_restricao,flag_restricao,"verdadeiro, falso",0,0.0,2 valores distintos,,0,OK
+fato_restricao,sk_usina,1 a 9999,0,0.0,"1,00","235,00",0,OK
+fato_restricao,sk_data,20250101 a 20251231,0,0.0,"20.250.101,00","20.251.231,00",0,OK
+fato_restricao,sk_horario,"48 valores: 0, 30, 100, 130 … 2330",0,0.0,48 valores distintos,,0,OK
+fato_restricao,sk_restricao,1 a 16,0,0.0,"1,00","16,00",0,OK
+fato_restricao,din_instante,2025-01-01 a 2025-12-31,0,0.0,2025-01-01 00:00:00,2025-12-31 23:30:00,0,OK
+fato_restricao,geracao_mwmed,0 a 2500,0,0.0,"0,00","1.317,41",0,OK
+fato_restricao,geracao_limitada_mwmed,0 a 2500,2441803,63.03,"0,00","1.346,00",0,OK
+fato_restricao,disponibilidade_mwmed,0 a 2500,0,0.0,"0,00","7.778,69",5,ATENÇÃO
+fato_restricao,geracao_referencia_mwmed,0 a 2500,0,0.0,"0,00","1.303,70",0,OK
+fato_restricao,geracao_nao_realizada_apurada_mwmed,0 a 2500,2441803,63.03,"0,00","1.236,13",0,OK
+fato_restricao,minutos_restricao,0 a 30,2441829,63.03,"1,00","30,00",0,OK
+fato_restricao,minutos_rel,0 a 30,2441803,63.03,"0,00","30,00",0,OK
+fato_restricao,minutos_cnf,0 a 30,2441826,63.03,"0,00","30,00",0,OK
+fato_restricao,minutos_ene,0 a 30,2441805,63.03,"0,00","30,00",0,OK
+fato_restricao,energia_gerada_mwh,0 a 1250,0,0.0,"0,00","658,71",0,OK
+fato_restricao,energia_cortada_mwh,0 a 1250,0,0.0,"0,00","618,07",0,OK
+fato_restricao,energia_potencial_mwh,0 a 1250,0,0.0,"0,00","658,71",0,OK
+fato_restricao,energia_cortada_rel_mwh,0 a 1250,0,0.0,"0,00","607,38",0,OK
+fato_restricao,energia_cortada_cnf_mwh,0 a 1250,0,0.0,"0,00","612,17",0,OK
+fato_restricao,energia_cortada_ene_mwh,0 a 1250,0,0.0,"0,00","618,07",0,OK
+fato_restricao,energia_cortada_par_mwh,0 a 1250,0,0.0,"0,00","0,00",0,OK
+fato_restricao,energia_cortada_ni_mwh,0 a 1250,0,0.0,"0,00","0,00",0,OK
+fato_restricao,flag_restrito,"verdadeiro, falso",0,0.0,2 valores distintos,,0,OK
+fato_restricao,flag_energia_recalculada,"verdadeiro, falso",0,0.0,1 valores distintos,,0,OK
+fato_restricao,flag_geracao_acima_disponibilidade,"verdadeiro, falso",0,0.0,2 valores distintos,,0,OK
+fato_evento_corte,sk_evento,1 a 10000000,0,0.0,"1,00","67.782,00",0,OK
+fato_evento_corte,sk_usina,1 a 9999,0,0.0,"1,00","235,00",0,OK
+fato_evento_corte,sk_data_inicio,20250101 a 20251231,0,0.0,"20.250.101,00","20.251.231,00",0,OK
+fato_evento_corte,sk_horario_inicio,"48 valores: 0, 30, 100, 130 … 2330",0,0.0,48 valores distintos,,0,OK
+fato_evento_corte,sk_restricao_predominante,1 a 16,0,0.0,"1,00","9,00",0,OK
+fato_evento_corte,inicio,2025-01-01 a 2025-12-31,0,0.0,2025-01-01 00:00:00,2025-12-31 13:00:00,0,OK
+fato_evento_corte,fim,2025-01-01 a 2026-01-01,0,0.0,2025-01-01 14:00:00,2025-12-31 18:00:00,0,OK
+fato_evento_corte,intervalos,1 a 17568,0,0.0,"1,00","954,00",0,OK
+fato_evento_corte,duracao_h,0.5 a 8784,0,0.0,"0,50","477,00",0,OK
+fato_evento_corte,minutos_restritos,0 a 527040,0,0.0,"1,00","28.566,00",0,OK
+fato_evento_corte,energia_cortada_mwh,0 a 1000000,0,0.0,"0,00","109.197,80",0,OK
+fato_evento_corte,corte_maximo_mw,0 a 2500,0,0.0,"0,00","1.236,13",0,OK
+fato_evento_corte,faixa_duracao,"até 1 h, 1 a 2 h, 2 a 4 h, 4 a 8 h, 8 a 12 h, mais de 12 h",0,0.0,6 valores distintos,,0,OK
+fato_evento_corte,flag_cabe_bateria,"verdadeiro, falso",0,0.0,2 valores distintos,,0,OK

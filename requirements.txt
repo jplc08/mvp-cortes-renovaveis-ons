@@ -1,0 +1,9 @@
+# Ambiente de referência: Google Colab (as versões instaladas no Colab atendem a estes mínimos)
+pandas>=2.0
+numpy>=1.24
+scipy>=1.10
+matplotlib>=3.7
+requests>=2.31
+pyarrow>=14.0
+google-cloud-bigquery>=3.11
+db-dtypes>=1.1

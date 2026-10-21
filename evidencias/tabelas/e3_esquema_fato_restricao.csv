@@ -1,0 +1,26 @@
+coluna,tipo,modo,descrição gravada no BigQuery
+sk_usina,INTEGER,REQUIRED,Usina (FK → dim_usina). Domínio: 1 a 9999.
+sk_data,INTEGER,REQUIRED,Data do intervalo (FK → dim_data). Domínio: 20250101 a 20251231.
+sk_horario,INTEGER,REQUIRED,"Intervalo de meia hora (FK → dim_horario). Domínio: 48 valores: 0, 30, 100, 130 … 2330."
+sk_restricao,INTEGER,REQUIRED,Motivo × origem principal do intervalo (FK → dim_restricao). Domínio: 1 a 16.
+din_instante,DATETIME,REQUIRED,"Início do intervalo de meia hora (horário de Brasília). Com sk_usina, forma a chave do grão. Domínio: 2025-01-01 a 2025-12-31."
+geracao_mwmed,FLOAT,NULLABLE,Geração verificada no intervalo (MW médios). Domínio: 0 a 2500.
+geracao_limitada_mwmed,FLOAT,NULLABLE,Limite de geração imposto pelo ONS no intervalo (MW médios). Domínio: 0 a 2500.
+disponibilidade_mwmed,FLOAT,NULLABLE,Disponibilidade declarada da usina (MW médios). Domínio: 0 a 2500.
+geracao_referencia_mwmed,FLOAT,NULLABLE,"Geração de referência: o que a usina geraria sem restrição, estimado pelo ONS (MW médios). Domínio: 0 a 2500."
+geracao_nao_realizada_apurada_mwmed,FLOAT,NULLABLE,"Energia não gerada apurada pelo ONS (GNRa), como publicada (MW médios). Domínio: 0 a 2500."
+minutos_restricao,INTEGER,NULLABLE,Minutos do intervalo sob restrição. Domínio: 0 a 30.
+minutos_rel,INTEGER,NULLABLE,Minutos restritos por indisponibilidade externa (REL). Domínio: 0 a 30.
+minutos_cnf,INTEGER,NULLABLE,Minutos restritos por confiabilidade elétrica (CNF). Domínio: 0 a 30.
+minutos_ene,INTEGER,NULLABLE,Minutos restritos por razão energética (ENE). Domínio: 0 a 30.
+energia_gerada_mwh,FLOAT,NULLABLE,Energia gerada no intervalo (MWh). Medida aditiva. Domínio: 0 a 1250.
+energia_cortada_mwh,FLOAT,REQUIRED,Energia que deixou de ser gerada por restrição (MWh). Medida aditiva. Domínio: 0 a 1250.
+energia_potencial_mwh,FLOAT,REQUIRED,Energia que a usina poderia ter gerado: gerada + cortada (MWh). Denominador do % cortado. Domínio: 0 a 1250.
+energia_cortada_rel_mwh,FLOAT,REQUIRED,Parcela da energia cortada atribuída a indisponibilidade externa (REL) (MWh). As cinco parcelas somam energia_cortada_mwh. Domínio: 0 a 1250.
+energia_cortada_cnf_mwh,FLOAT,REQUIRED,Parcela da energia cortada atribuída a confiabilidade elétrica (CNF) (MWh). As cinco parcelas somam energia_cortada_mwh. Domínio: 0 a 1250.
+energia_cortada_ene_mwh,FLOAT,REQUIRED,Parcela da energia cortada atribuída a razão energética (ENE) (MWh). As cinco parcelas somam energia_cortada_mwh. Domínio: 0 a 1250.
+energia_cortada_par_mwh,FLOAT,REQUIRED,Parcela da energia cortada atribuída a parecer de acesso (PAR) (MWh). As cinco parcelas somam energia_cortada_mwh. Domínio: 0 a 1250.
+energia_cortada_ni_mwh,FLOAT,REQUIRED,Parcela da energia cortada atribuída a motivo não informado (NI) (MWh). As cinco parcelas somam energia_cortada_mwh. Domínio: 0 a 1250.
+flag_restrito,BOOLEAN,REQUIRED,"Verdadeiro se o intervalo teve restrição (minutos, motivo ou energia não gerada). Domínio: verdadeiro, falso."
+flag_energia_recalculada,BOOLEAN,REQUIRED,"Verdadeiro se a energia cortada foi recalculada porque a GNRa estava ausente. Domínio: verdadeiro, falso."
+flag_geracao_acima_disponibilidade,BOOLEAN,REQUIRED,"Verdadeiro se a geração superou a disponibilidade declarada em mais de 1 MW. Domínio: verdadeiro, falso."
